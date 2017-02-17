@@ -10,6 +10,7 @@ cmake_minimum_required(VERSION 3.0)
 project(SimpleCppProj VERSION 0.0.0 LANGUAGES CXX)
 
 # Add application and library to the project
+add_subdirectory(app) 		# 'app' references directory name
+add_subdirectory(simplelib) # 'simplelib' references directory name
 
-add_subdirectory(app)
-add_subdirectory(simplelib)
+add_dependencies(app simplelib) # In this instance 'app' and 'simplelib' are both _targets_, not directories
